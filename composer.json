@@ -1,0 +1,19 @@
+{
+    "name": "socialiteproviders/mcsso",
+    "description": "MCSSO OAuth2 Provider for Laravel Socialite",
+    "license": "MIT",
+    "authors": [{
+        "name": "Katzen48",
+        "email": "admin@katzen48.de"
+    }],
+    "require": {
+        "php": ">=5.5.9",
+        "ext-json": "*",
+        "socialiteproviders/manager": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SocialiteProviders\\MCSSO\\": ""
+        }
+    }
+}
