@@ -54,21 +54,27 @@ class Provider extends AbstractProvider
     {
         $data = $user['data'];
 
-        return (new User())->setRaw($user['data'])->map([
+        $map = [
             // General User Info
             'id'            => $data['id'],
             'nickname'      => $data['name'],
             'name'          => $data['name'],
-            'email'         => $data['email'],
 
             // Minecraft
             'uuid'          => $data['minecraft']['uuid'],
             'verified'      => $data['minecraft']['verified'],
-            'verified_at'   => new Carbon($data['minecraft']['verified_at']),
+        ];
 
-            // Twitch
-            'twitchId'      => $data['twitch']['id'],
-        ]);
+        if(array_key_exists('email', $data))
+            $map['email'] = $data['email'];
+
+        if(array_key_exists('verified_at', $data))
+            $map['verified_at'] = $data['verified_at'];
+
+        if(array_key_exists('twitch', $data))
+            $map['twitchId'] = $data['twitch']['id'];
+
+        return (new User())->setRaw($user['data'])->map($map);
     }
 
     /**
