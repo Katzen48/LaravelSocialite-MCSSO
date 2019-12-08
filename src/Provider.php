@@ -38,7 +38,7 @@ class Provider extends AbstractProvider
      */
     protected function getUserByToken($token)
     {
-        $response = $this->getHttpClient()->get('https://mc-sso.de/user', [
+        $response = $this->getHttpClient()->get('https://mc-sso.de/api/user', [
             'headers' => [
                 'Authorization' => 'Bearer '.$token,
             ],
