@@ -30,7 +30,7 @@ class Provider extends AbstractProvider
      */
     protected function getTokenUrl()
     {
-        return 'https://mc-sso.de/oauth/access_token';
+        return 'https://mc-sso.de/oauth/token';
     }
 
     /**
