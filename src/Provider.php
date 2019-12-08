@@ -15,7 +15,7 @@ class Provider extends AbstractProvider
     /**
      * {@inheritdoc}
      */
-    protected $scopes = ['user:read:email', 'user:read:minecraft:verifydate','user:read:twitch'];
+    protected $scopes = [];
 
     /**
      * {@inheritdoc}
